@@ -1,22 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const UserCard = ({ name, age, email, bio }) => {
-    return (
-        <div className="user-card">
-            <h2>{name}</h2>
-            <p>Age: {age}</p>
-            <p>Email: {email}</p>
-            <p>Bio: {bio}</p>
-        </div>
-    );
-};
-
-UserCard.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired,
-    email: PropTypes.string.isRequired,
-    bio: PropTypes.string,
+const UserCard = ({ name, rollNo, email, outpassStatus }) => {
+  return (
+    <div
+      className="text-white p-5  rounded-3xl inline-flex flex-col w-full"
+      style={{ backgroundColor: '#1f1f1f' }}
+    >
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 600, lineHeight: '1.8rem' }} className="uppercase mt-1">
+        {name}
+      </h2>
+      <p style={{ fontSize: '1rem', fontWeight: 300, color: '#b8b8b8ff' }} >{rollNo}</p>
+      <p style={{ fontSize: '1rem', fontWeight: 400, color: '#fff' }} >{email}</p>
+      <div className="mt-4 rounded-xl p-2  text-m font-medium text-left"
+        style={{ backgroundColor: '#3a3a3aff' }}>
+          <p className='ml-2'>
+        {'No outpass requests found'}</p>
+      </div>
+    </div>
+  );
 };
 
 export default UserCard;
